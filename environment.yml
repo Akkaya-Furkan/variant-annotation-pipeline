@@ -1,0 +1,9 @@
+name: variant-annotation
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13.9
+  - pip
+  - pip:
+      - -r requirements.txt
+      - -e .

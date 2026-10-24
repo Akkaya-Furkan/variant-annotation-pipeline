@@ -1,0 +1,28 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test-and-reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.9'
+          cache: pip
+      - name: Install pinned environment
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip install --no-build-isolation -e .
+          python -m pip check
+      - name: Run tests
+        run: python -m pytest -q
+      - name: Verify all committed outputs offline
+        run: python scripts/verify_outputs.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: annotation-results
+          path: results/

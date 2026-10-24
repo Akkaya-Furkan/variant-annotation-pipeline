@@ -1,0 +1,43 @@
+{
+  "assembly": "GRCh38",
+  "clinical_significance": {
+    "Benign": 6,
+    "Benign/Likely_benign": 12,
+    "Conflicting_classifications_of_pathogenicity": 8,
+    "Likely_benign": 128,
+    "NA": 11,
+    "Uncertain_significance": 135
+  },
+  "filter_stages": {
+    "input": 300,
+    "pathogenic_aggregate": 0,
+    "quality_eligible": 300,
+    "review_at_least_two_stars": 0
+  },
+  "input_records": 300,
+  "input_sha256": "5467642b508e774e6c9f2896d37fb2139dcbe0687f5638dde1d7163bd411d00c",
+  "matched_records": 300,
+  "missing_consequence": 3,
+  "missing_gene": 0,
+  "regions": {
+    "1": {
+      "max_pos": 939279,
+      "min_pos": 66926
+    }
+  },
+  "resource_records": 300,
+  "resource_sha256": "f764ad6b4e8d8f65e7d2d2972587bad97a1e28e0b1689fe6f4d952bc8ebc1f4c",
+  "review_stars": {
+    "0": 13,
+    "1": 204,
+    "2": 83
+  },
+  "unique_keys": 300,
+  "unmatched_records": 0,
+  "variant_classes": {
+    "MNV": 1,
+    "SNV": 286,
+    "deletion": 8,
+    "insertion": 5
+  }
+}

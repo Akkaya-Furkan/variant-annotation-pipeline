@@ -1,0 +1,15 @@
+{
+  "source_url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/archive_2.0/2026/clinvar_20261004.vcf.gz",
+  "release_date": "2026-10-04",
+  "assembly": "GRCh38",
+  "retrieved_at_utc": "2026-10-24T12:49:29.548512+00:00",
+  "http_last_modified": "Mon, 05 Oct 2026 13:03:32 GMT",
+  "source_records": 300,
+  "selection": "First 300 records in source order; no clinical selection",
+  "source_file_date": "2026-10-04",
+  "sha256": {
+    "clinvar_source.vcf": "f764ad6b4e8d8f65e7d2d2972587bad97a1e28e0b1689fe6f4d952bc8ebc1f4c",
+    "sites.vcf": "5467642b508e774e6c9f2896d37fb2139dcbe0687f5638dde1d7163bd411d00c"
+  },
+  "checksum_scope": "Uncompressed extracted files; full remote gzip not downloaded or verified"
+}
