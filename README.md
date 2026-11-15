@@ -120,11 +120,13 @@ The five generated outputs are:
 - [Summary figure](results/summary.png): input classes and cumulative filter counts.
 
 `python scripts/verify_outputs.py` regenerates all **5/5** outputs in a temporary
-directory and requires identical SHA-256 hashes, including the PNG, under the
-pinned environment. Local validation passed **43/43 pytest cases** (acceptance minimum: 12), and
-independent re-downloads matched **2/2 extracted VCF hashes**. The installed CLI
-also reproduced **5/5** output hashes. GitHub Actions runs pytest and this offline reproduction check
-on each push and pull request, then uploads the results as an artifact.
+directory and requires identical byte SHA-256 hashes for the four text outputs.
+For the PNG it compares the decoded mode, dimensions and pixel-byte SHA-256;
+metadata and lossless compression differences are ignored. Local validation passed
+**52/52 pytest cases** (acceptance minimum: 12), and independent re-downloads matched
+**2/2 extracted VCF hashes**. The installed CLI also reproduced **5/5** outputs
+under these comparison rules. GitHub Actions runs pytest and this offline
+reproduction check on each push and pull request, then uploads the results as an artifact.
 
 ## Limitations
 
@@ -144,5 +146,5 @@ on each push and pull request, then uploads the results as an artifact.
 - **Not done:** transactional recovery from disk-write failures. Parsing and download
   failures occur before file writes, but an I/O failure during output writing may
   leave partial files. Use a new output directory for independent runs.
-- Byte-identical figures are checked with pinned Python/dependency versions on Linux;
-  rendering on other platforms or with different versions is not guaranteed.
+- Pixel-identical figures are required; font/FreeType or rendering differences
+  across platforms or dependency builds can still fail this check.

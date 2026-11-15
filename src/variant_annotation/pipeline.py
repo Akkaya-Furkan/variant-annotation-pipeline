@@ -197,7 +197,9 @@ def run(input_path, resource_path, output):
         ax.bar_label(bars, padding=3)
         ax.spines[["top", "right"]].set_visible(False)
     fig.suptitle("ClinVar GRCh38 prefix — exact-allele lookup, no clinical interpretation")
-    fig.savefig(output / "summary.png", dpi=150, metadata={"Software": "variant-annotation-pipeline"})
+    fig.savefig(output / "summary.png", dpi=150,
+                metadata={"Software": "variant-annotation-pipeline"},
+                pil_kwargs={"compress_level": 6, "optimize": False})
     plt.close(fig)
     report = ["# Annotation report", "", "Exact GRCh38 allele lookup against the bundled ClinVar snapshot.", "",
               f"Input: {len(rows)} records; unique keys: {summary['unique_keys']}; "
